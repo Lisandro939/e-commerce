@@ -6,6 +6,11 @@
 html {
   background-color: white;
   font-family: "KumbhSansLight";
+  overflow-x: hidden;
+}
+
+h1, h2, h4, h3 {
+  font-family: "KumbhSansMedium";
 }
 
 .root,
@@ -17,4 +22,9 @@ html {
 @font-face {
   font-family: "KumbhSansLight";
   src: url('../public/fonts/KumbhSans-Light.ttf');
+}
+
+@font-face {
+  font-family: "KumbhSansMedium";
+  src: url('../public/fonts/KumbhSans-Medium.ttf');
 }
