@@ -42,7 +42,7 @@ export default function Cart() {
         <div className={'absolute flex flex-col justify-center items-center px-4 pt-4 inset-y-20 h-[200px] w-[300px] shadow-xl shadow-gray-400 bg-white text-black rounded-lg ' + visibility}>
             <h2>Your cart is empty</h2>
         </div>
-        : <div className={'absolute flex flex-col px-4 pt-4 inset-y-20 h-[200px] w-[350px] shadow-xl shadow-gray-400 bg-white text-black rounded-lg ' + visibility}>
+        : <div className={'absolute flex flex-col px-4 pt-4 inset-y-20 sm:inset-x-0 sm:mx-auto h-[200px] w-[350px] shadow-xl shadow-gray-400 bg-white text-black rounded-lg ' + visibility}>
             <h2 className='border-b-2 border-gray-200 sm:border-b-0'>
                 Cart
             </h2>
