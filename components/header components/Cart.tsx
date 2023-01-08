@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React, {useEffect, useState} from 'react'
 import FirstImage from '../../public/images/image-product-1-thumbnail.jpg'
-import Delete from '../../public/images/delete.svg'
 
 export default function Cart() {
 
@@ -14,7 +13,6 @@ export default function Cart() {
     })
 
     useEffect(() => {
-        console.log(localStorage.getItem('item'))
         const item = JSON.parse(localStorage.getItem('item') || '{"title":""}')
         if (item !== '{"title":"","price":0,"numberOfItems":0}'){
             setItem(item)

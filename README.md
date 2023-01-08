@@ -1,6 +1,7 @@
 TASK LIST
 
 - [x] Add cart functionality
-- [ ] Header button mobile functionality
-- [ ] Add "Add to cart" functionality
-- [ ] Add images functionality
+- [x] Header button mobile functionality
+- [x] Add "Add to cart" functionality
+- [x] Add images functionality desktop
+- [ ] Add images functionality mobile
