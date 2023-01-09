@@ -52,18 +52,6 @@ export default function AbsoluteImages({setClickedImage}) {
         setStyleFourth(principalImage)
     }
 
-    function next () {
-        if (selectedImage === FirstImage) {
-            secondImageStyle()
-        } else if (selectedImage === SecondImage) {
-            thirdImageStyle()
-        } else if (selectedImage === ThirdImage) {
-            fourthImageStyle()
-        } else if (selectedImage === FourthImage) {
-            firstImageStyle()
-        }
-    }
-
     function previous () {
         if (selectedImage === FirstImage) {
             fourthImageStyle()
@@ -76,8 +64,19 @@ export default function AbsoluteImages({setClickedImage}) {
         }
     }
 
+    function next () {
+        if (selectedImage === FirstImage) {
+            secondImageStyle()
+        } else if (selectedImage === SecondImage) {
+            thirdImageStyle()
+        } else if (selectedImage === ThirdImage) {
+            fourthImageStyle()
+        } else if (selectedImage === FourthImage) {
+            firstImageStyle()
+        }
+    }
   return (
-    <div className='absolute flex justify-center items-center m-auto top-0 left-0 right-0 w-[100vw] h-[100vh] bg-black bg-opacity-30 sm:hidden'>
+    <div className='z-[1] absolute flex justify-center items-center m-auto top-0 left-0 right-0 w-[100vw] h-[100vh] bg-black bg-opacity-30 sm:hidden'>
         <div className='flex flex-col justify-center items-center w-[40vw] h-screen sm:w-max pt-0 h-fit visible'>
             <button 
             className='w-[70%] mb-2 flex justify-end'

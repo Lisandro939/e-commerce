@@ -55,6 +55,30 @@ export default function Images() {
     setStyleFourth(principalImage)
   }
 
+  function previous () {
+    if (selectedImage === FirstImage) {
+      setSelectedImage(FourthImage)
+    } else if (selectedImage === SecondImage) {
+      setSelectedImage(FirstImage)
+    } else if (selectedImage === ThirdImage) {
+      setSelectedImage(SecondImage)
+    } else if (selectedImage === FourthImage) {
+      setSelectedImage(ThirdImage)
+    }
+  }
+
+  function next () {
+    if (selectedImage === FirstImage) {
+      setSelectedImage(SecondImage)
+    } else if (selectedImage === SecondImage) {
+      setSelectedImage(ThirdImage)
+    } else if (selectedImage === ThirdImage) {
+      setSelectedImage(FourthImage)
+    } else if (selectedImage === FourthImage) {
+      setSelectedImage(FirstImage)
+    }
+}
+
   return (
     <>
     <div className={clickedImage}>
@@ -63,17 +87,31 @@ export default function Images() {
       />
     </div>
     <div className='flex flex-col justify-center items-center sm:w-[100vw] h-screen sm:w-max pt-0 h-fit visible'>
-        <div className='static flex justify-center items-center sm:w-screen'>
+        <div 
+        className='static flex justify-center items-center  cursor-pointer z-[0] sm:w-[100vw]'
+        onClick={() => {
+          setClickedImage('')
+        }}
+        > 
+            <button 
+            className='hidden bg-white mr-[-60px] px-4 py-3 rounded-full z-20 sm:inline-block'
+            onClick={() => previous()}
+            >
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </button>
             <Image 
-            className='object-cover rounded-lg cursor-pointer sm:rounded-none' 
+            className='object-cover rounded-lg sm:rounded-none z-[-1]' 
             src={selectedImage} 
             alt='' 
-            width={400} 
+            width={420} 
             height={400}
-            onClick={() => {
-              setClickedImage('')
-            }}
             />
+            <button 
+            className='hidden bg-white ml-[-60px] px-4 py-3 rounded-full z-20 sm:inline-block'
+            onClick={() => next()}
+            >
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+            </button>
         </div>
         <div className='flex flex-row justify-around items-center w-3/4 h-16 px-2 gap-10 mt-4 sm:hidden'>
             <Image 

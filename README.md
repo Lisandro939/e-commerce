@@ -4,4 +4,4 @@ TASK LIST
 - [x] Header button mobile functionality
 - [x] Add "Add to cart" functionality
 - [x] Add images functionality desktop
-- [ ] Add images functionality mobile
+- [x] Add images functionality mobile
