@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Avatar from '../public/images/image-avatar.png'
 import Link from 'next/link'
@@ -10,10 +12,31 @@ export default function Header() {
 
     const linkBorderBottom:string  = "h-full flex items-center hover:underline decoration-orange-500 decoration-2 underline-offset-8"
 
+    const [sideBar, setSideBar] = useState('hidden')
+
   return (
     <div className='w-screen max-w-6xl h-auto mb-10 flex flex-row justify-center sm:px-5 sm:py-2 sm:mb-6'>
+        <div className={'absolute top-0 left-0 h-[140vh] w-[100vw] bg-white z-50 bg-black bg-opacity-30 ' + sideBar}>
+            <div className='flex flex-col bg-white h-[100%] w-[60vw] p-4 gap-10'>
+                <button
+                onClick={() => setSideBar('hidden')}
+                >
+                    <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="black" fillRule="evenodd"/></svg>
+                </button>
+                <div className='flex flex-col gap-4 pl-4 font-black text-lg'>
+                    <a>Collections</a>
+                    <a>Men</a>
+                    <a>Women</a>
+                    <a>About</a>
+                    <a>Contact</a>
+                </div>
+            </div>
+        </div>
         <div className={"w-3/4 h-full flex flex-row items-center justify-start space-x-5 py-8 sm:py-0 " + borderBottom}>
-            <button className='hidden sm:inline-block'>
+            <button 
+            className='hidden sm:inline-block'
+            onClick={() => setSideBar("")}
+            >
                 <svg className='' width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fillRule="evenodd"/></svg>
             </button>
             <svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
